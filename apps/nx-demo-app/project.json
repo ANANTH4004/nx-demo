@@ -8,19 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/nx-demo-app",
         "index": "apps/nx-demo-app/src/index.html",
         "main": "apps/nx-demo-app/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/nx-demo-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/nx-demo-app/src/favicon.ico",
           "apps/nx-demo-app/src/assets"
         ],
-        "styles": ["apps/nx-demo-app/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "apps/nx-demo-app/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
