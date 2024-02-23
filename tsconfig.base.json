@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-demo/category": ["category/src/index.ts"],
       "@nx-demo/dashboard": ["dashboard/src/index.ts"]
     }
   },
