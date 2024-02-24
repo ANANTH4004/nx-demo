@@ -13,14 +13,8 @@ import { Store } from '@ngrx/store';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'nx-demo-app';
-  constructor(private readonly store : Store){}
-  ngOnInit(): void {
-   this.store.dispatch(getCategoriesActions())
-  }
-  //categories$ = inject(CategoryService).getCategories();
-  categories$ = this.store.select(selectCategories)
-
+  
   
 }

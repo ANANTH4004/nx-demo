@@ -18,7 +18,7 @@ export class categoryEffects {
       mergeMap(() =>
         this.catagoryService.getCategories().pipe(
           map((categories) => getCategoryActionsSuccess(categories)),
-          catchError(() => of(getCategoryActionsFailure('Error Occured')))
+          catchError(() => of(getCategoryActionsFailure('Error Occured in effects')))
         )
       )
     )
