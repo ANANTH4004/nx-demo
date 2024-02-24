@@ -1,4 +1,4 @@
-import { createActionGroup, props } from "@ngrx/store";
+import { createActionGroup, emptyProps, props } from "@ngrx/store";
 
 export interface Product {
     id:number,
@@ -13,7 +13,7 @@ export const ProductsActions = createActionGroup(
     {
         source : 'Product',
         events : {
-            'Get Product' :props<{name : string}>(),
+            'Get Product' :emptyProps,
             'Product Success' : props<{products :Product[]}>(),
             'product Failure' : props<{error : string}>()
 

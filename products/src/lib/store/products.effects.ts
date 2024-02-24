@@ -5,7 +5,7 @@ import { Product, ProductsActions } from './products.action';
 import { ProductsService } from '../products.service';
 
 
-export const loadActors = createEffect(
+export const loadProducts = createEffect(
     (actions$ = inject(Actions), productService = inject(ProductsService)) => {
       return actions$.pipe(
         ofType(ProductsActions.getProduct),
