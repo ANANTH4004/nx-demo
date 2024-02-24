@@ -7,12 +7,14 @@ import { provideEffects } from '@ngrx/effects';
 import { provideHttpClient } from '@angular/common/http';
 import { categoryEffects, categoryFeature, categoryReducer } from '@nx-demo/category';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import {ProductEffects, productFeatureState } from '@nx-demo/products'
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(appRoutes), provideAnimationsAsync(),
    provideStore(),
    provideState(categoryFeature),
-   provideEffects([categoryEffects]),
+   provideState(productFeatureState),
+   provideEffects([categoryEffects,ProductEffects]),
   provideHttpClient(),
   provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
   
