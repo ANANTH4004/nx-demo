@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { getCategoriesActions, selectCategories } from '@nx-demo/category';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'TH-main-nav',
@@ -24,7 +24,8 @@ import { RouterLink } from '@angular/router';
     MatListModule,
     MatIconModule,
     CommonModule,
-    RouterLink
+    RouterLink,
+    RouterOutlet
   ]
 })
 export class MainNavComponent implements OnInit {

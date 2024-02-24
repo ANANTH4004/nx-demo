@@ -1,8 +1,9 @@
 import { createReducer, on } from "@ngrx/store"
 import { getProductFailure, getProductSuccess } from "./product.action"
+import { Product } from "./store/products.action"
 
 export interface ProductState {
-    products : string[],
+    products : Product[],
     error : string
 }
 

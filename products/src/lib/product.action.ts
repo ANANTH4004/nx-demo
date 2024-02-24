@@ -1,4 +1,5 @@
 import { createAction } from "@ngrx/store";
+import { Product } from "./store/products.action";
 
 export const getProductActions = createAction(
     '[Products] Get Products',
@@ -6,7 +7,7 @@ export const getProductActions = createAction(
 
 export const getProductSuccess = createAction(
     '[Products] Get Products Success',
-    (products:string[]) => ({products})
+    (products:Product[]) => ({products})
 )
 export const getProductFailure = createAction(
     '[Products] Get Products Failure',
