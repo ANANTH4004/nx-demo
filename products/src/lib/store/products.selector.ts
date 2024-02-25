@@ -18,3 +18,7 @@ export const selectProductError = createSelector(
     selectProductState,
     (state) => state.error
 )
+export const getProductById = (categoryName:string)=> createSelector(
+    selectProductState,
+    (state) => state.products.filter((product) => product.category == categoryName)
+)

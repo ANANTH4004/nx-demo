@@ -10,10 +10,10 @@ export const loadProducts = createEffect(
       return actions$.pipe(
         ofType(ProductsActions.getProduct),
         mergeMap((action) =>
-        productService.getProductsByCategory('electronics').pipe(
-            mergeMap((products) => [
+        productService.getAllProducts().pipe(
+            map((products) => 
                 ProductsActions.productSuccess({ products }),
-            ]),
+            ),
             catchError((error: { message: string }) =>
               of(ProductsActions.productFailure({ error: error.message }))
             )
@@ -23,3 +23,18 @@ export const loadProducts = createEffect(
     },
     { functional: true }
   );
+
+  export const loadProductByCategory = createEffect(
+    (actions$ = inject(Actions),prodService = inject(ProductsService)) => {
+      return actions$.pipe(
+        ofType(ProductsActions.loadProductByCategory),
+        exhaustMap((action)=> 
+        prodService.getProductsByCategory(action.categoryName).pipe(
+          map((products) => ProductsActions.productSuccess({products})),
+          catchError((error)=> of(ProductsActions.productFailure({error})))
+        )
+        )
+      )
+    },
+    {functional : true}
+  )
